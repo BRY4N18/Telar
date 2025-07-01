@@ -55,7 +55,6 @@ namespace Telar
             Coldiag.ShowDialog();
             pintura = Coldiag.Color;
         }
-
         private void PanelSuperior_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -65,27 +64,22 @@ namespace Telar
                 Cursorpoint = Cursor.Position;
             }
         }
-
         private void PanelSuperior_MouseMove(object sender, MouseEventArgs e)
         {
             if (Arrastrar) this.Location = formpoint + new Size(Cursor.Position - new Size(Cursorpoint));
         }
-
         private void PanelSuperior_MouseUp(object sender, MouseEventArgs e)
         {
             Arrastrar = false;
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
         private void btnMaximizar_Click(object sender, EventArgs e)
         {            
             if (this.WindowState==FormWindowState.Normal) WindowState = FormWindowState.Maximized;
