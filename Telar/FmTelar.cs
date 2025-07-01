@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Telar
 {
     public partial class FmTelar : Form
     {
+        //Prompt para la IA de deepseek : "Tengo un telar representado por una matriz de colores de 5x5, donde cada celda tiene un color. Interprétalo como un patrón andino. Aquí está la
+        //matriz:\n[['Red', 'Red', 'White', 'Red', 'Red'], ['Red', 'White', 'White', 'White', 'Red'], ['White', 'White', 'Black', 'White', 'White'], ['Red', 'White', 'White', 'White', 'Red'], ['Red', 'Red', 'White', 'Red', 'Red']]"
         Color pintura = Color.Transparent;
         private bool Arrastrar = false;        
         private Point formpoint;
@@ -21,14 +24,6 @@ namespace Telar
         {
             InitializeComponent();
         }
-        private void FmTelar_Load(object sender, EventArgs e)
-        {
-            CargarTelar();
-        }        
-        private void dgvTelar_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvTelar[e.ColumnIndex, e.RowIndex].Style.BackColor = pintura;
-        }        
         private void CargarTelar()
         {
             //Ubicar la cantidad de filas y columnas que deseo
@@ -50,6 +45,28 @@ namespace Telar
             for (int i = 0; i < dgvTelar.ColumnCount; i++)
                 dgvTelar.Columns[i].Width = dgvTelar.Width / dgvTelar.ColumnCount;
         }
+        private void MatrizTelar()
+        {
+            int fila = dgvTelar.Rows.Count, columna = dgvTelar.Columns.Count;
+            Color celda = Color.White;
+            string[,] matrizTelar = new string[fila,columna];
+            for (int i = 0; i < columna; i++)
+                for (int j = 0; j < fila; j++)
+                {
+                    celda = dgvTelar[i,j].Style.BackColor;
+                    ColorTranslator.ToHtml(celda);
+                    matrizTelar[j, i] = celda.Name;
+                }
+            MessageBox.Show(matrizTelar[0,0]);
+        }
+        private void FmTelar_Load(object sender, EventArgs e)
+        {
+            CargarTelar();
+        }        
+        private void dgvTelar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvTelar[e.ColumnIndex, e.RowIndex].Style.BackColor = pintura;
+        }               
         private void btnColores_Click(object sender, EventArgs e)
         {           
             Coldiag.ShowDialog();
@@ -85,6 +102,10 @@ namespace Telar
             if (this.WindowState==FormWindowState.Normal) WindowState = FormWindowState.Maximized;
             else WindowState = FormWindowState.Normal;
             TamanoCeldas();
+        }
+        private void btnInterpretar_Click(object sender, EventArgs e)
+        {
+            MatrizTelar();
         }
     }
 }
