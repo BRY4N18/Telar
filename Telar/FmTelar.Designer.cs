@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmTelar));
             this.dgvTelar = new System.Windows.Forms.DataGridView();
             this.Coldiag = new System.Windows.Forms.ColorDialog();
             this.btnColores = new System.Windows.Forms.Button();
             this.PanelSuperior = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnInterpretar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelar)).BeginInit();
             this.PanelSuperior.SuspendLayout();
             this.SuspendLayout();
@@ -54,25 +55,25 @@
             this.dgvTelar.BackgroundColor = System.Drawing.Color.White;
             this.dgvTelar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTelar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTelar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTelar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTelar.ColumnHeadersHeight = 29;
             this.dgvTelar.ColumnHeadersVisible = false;
             this.dgvTelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTelar.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTelar.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTelar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvTelar.Location = new System.Drawing.Point(31, 53);
             this.dgvTelar.MultiSelect = false;
@@ -92,10 +93,10 @@
             this.btnColores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnColores.BackgroundImage")));
             this.btnColores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnColores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnColores.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(4)))), ((int)(((byte)(202)))));
+            this.btnColores.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnColores.FlatAppearance.BorderSize = 0;
-            this.btnColores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(4)))), ((int)(((byte)(202)))));
-            this.btnColores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(4)))), ((int)(((byte)(202)))));
+            this.btnColores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnColores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnColores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnColores.ForeColor = System.Drawing.Color.Transparent;
             this.btnColores.Location = new System.Drawing.Point(702, 96);
@@ -119,6 +120,24 @@
             this.PanelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelSuperior_MouseDown);
             this.PanelSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelSuperior_MouseMove);
             this.PanelSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PanelSuperior_MouseUp);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.BackgroundImage")));
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(767, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(31, 24);
+            this.btnMinimizar.TabIndex = 5;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnMaximizar
             // 
@@ -156,31 +175,28 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnMinimizar
+            // btnInterpretar
             // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.BackgroundImage")));
-            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Location = new System.Drawing.Point(767, 3);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(31, 24);
-            this.btnMinimizar.TabIndex = 5;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.btnInterpretar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInterpretar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInterpretar.FlatAppearance.BorderSize = 0;
+            this.btnInterpretar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInterpretar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInterpretar.Location = new System.Drawing.Point(702, 462);
+            this.btnInterpretar.Name = "btnInterpretar";
+            this.btnInterpretar.Size = new System.Drawing.Size(146, 56);
+            this.btnInterpretar.TabIndex = 3;
+            this.btnInterpretar.Text = "Interpretar";
+            this.btnInterpretar.UseVisualStyleBackColor = true;
             // 
             // FmTelar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(4)))), ((int)(((byte)(202)))));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(876, 778);
+            this.Controls.Add(this.btnInterpretar);
             this.Controls.Add(this.PanelSuperior);
             this.Controls.Add(this.btnColores);
             this.Controls.Add(this.dgvTelar);
@@ -203,6 +219,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Button btnInterpretar;
     }
 }
 
