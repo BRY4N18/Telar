@@ -27,7 +27,7 @@ namespace Telar
         private void CargarTelar()
         {
             //Ubicar la cantidad de filas y columnas que deseo
-            const int celdas = 6;
+            const int celdas = 13;
             dgvTelar.RowCount = celdas;
             dgvTelar.ColumnCount = celdas;
 
@@ -57,7 +57,6 @@ namespace Telar
                     ColorTranslator.ToHtml(celda);
                     matrizTelar[j, i] = celda.Name;
                 }
-            MessageBox.Show(matrizTelar[0,0]);
         }
         private void FmTelar_Load(object sender, EventArgs e)
         {

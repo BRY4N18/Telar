@@ -177,6 +177,7 @@
             // 
             // btnInterpretar
             // 
+            this.btnInterpretar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInterpretar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInterpretar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInterpretar.FlatAppearance.BorderSize = 0;
