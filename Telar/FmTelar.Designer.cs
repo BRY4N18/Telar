@@ -178,9 +178,11 @@
             // btnInterpretar
             // 
             this.btnInterpretar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInterpretar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInterpretar.BackgroundImage")));
             this.btnInterpretar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInterpretar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInterpretar.FlatAppearance.BorderSize = 0;
+            this.btnInterpretar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInterpretar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInterpretar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInterpretar.Location = new System.Drawing.Point(702, 462);
@@ -196,12 +198,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(876, 778);
             this.Controls.Add(this.btnInterpretar);
             this.Controls.Add(this.PanelSuperior);
             this.Controls.Add(this.btnColores);
             this.Controls.Add(this.dgvTelar);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FmTelar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
