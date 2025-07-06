@@ -15,8 +15,6 @@ namespace Telar
 {
     public partial class FmTelar : Form
     {
-        //Prompt para la IA de deepseek : "Tengo un telar representado por una matriz de colores de 5x5, donde cada celda tiene un color. Interprétalo como un patrón andino. Aquí está la
-        //matriz:\n[['Red', 'Red', 'White', 'Red', 'Red'], ['Red', 'White', 'White', 'White', 'Red'], ['White', 'White', 'Black', 'White', 'White'], ['Red', 'White', 'White', 'White', 'Red'], ['Red', 'Red', 'White', 'Red', 'Red']]"
         Color pintura = Color.Transparent;
         private bool Arrastrar = false;        
         private Point formpoint;
@@ -46,10 +44,15 @@ namespace Telar
 
             for (int i = 0; i < dgvTelar.ColumnCount; i++)
                 dgvTelar.Columns[i].Width = dgvTelar.Width / dgvTelar.ColumnCount;
+
+            for (int i = 0; i < dgvTelar.RowCount; i++)
+                for (int j = 0; j < dgvTelar.ColumnCount; j++)
+                    dgvTelar[i, j].Style.BackColor = Color.White;
         }
-        private void MatrizTelar()
+        private async void MatrizTelar()
         {
             comunicacion = new ConexionPython();
+            string matri = "";
 
             int fila = dgvTelar.Rows.Count, columna = dgvTelar.Columns.Count;
             Color celda = Color.White;
@@ -61,9 +64,18 @@ namespace Telar
                     ColorTranslator.ToHtml(celda);
                     matrizTelar[j, i] = celda.Name;
                 }
-            
-            string mensaje = comunicacion.RespuestaMatriz(matrizTelar).ToString();
-            MessageBox.Show(mensaje);
+
+            matri = "[";
+            for (int i = 0; i < columna; i++)
+            {
+                matri += "[";
+                for (int j = 0; j < fila; j++)
+                    matri += (j != fila - 1) ? "'" + matrizTelar[j, i] + "'" + "," : "'" + matrizTelar[j, i] + "'";
+                matri += (i != columna - 1) ? "]" : "]]";
+            }
+
+            string mensaje = await comunicacion.RespuestaMatriz(matri);
+            MessageBox.Show(mensaje.ToString());
         }
         private void FmTelar_Load(object sender, EventArgs e)
         {
