@@ -16,8 +16,8 @@ namespace CapaNegocio
     {
         static async Task<string> ObtenerRespuestaDeepSeek(string prompt)
         {
-            var url = "https://openrouter.ai/api/v1/chat/completions";
-            var token = "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";
+            string url = "https://openrouter.ai/api/v1/chat/completions";
+            string token = "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";
 
             using (var client = new HttpClient())
             {
@@ -43,15 +43,14 @@ namespace CapaNegocio
                 var respuestaContenido = await respuesta.Content.ReadAsStringAsync();
 
                 var jsonRespuesta = JObject.Parse(respuestaContenido);
-                return jsonRespuesta["choices"][0]["message"]["content"]?.ToString();
+                return jsonRespuesta["choices"][0]["message"]["content"].ToString();
             }
         }
 
-        public async Task RespuestaMatriz(string[,] matriz)
+        public async Task<string> RespuestaMatriz(string matriz)
         {
-            string prompt = "\"Tengo un telar representado por una matriz de colores de 5x5, donde cada celda tiene un color. Interprétalo como un patrón andino. Aquí está la matriz: " + matriz;
-            string respuesta = await ObtenerRespuestaDeepSeek(prompt);
-            Console.WriteLine(respuesta);
+            string prompt = "Tengo un telar representado por una matriz de colores de 13x13, donde cada celda tiene un color. Interprétalo como un patrón andino. Aquí está la matriz: " + matriz + ".\nListo dime ahora el significado del telar que tiene ese patron de colores.";
+            return await ObtenerRespuestaDeepSeek(prompt);
         }
     }
 }
