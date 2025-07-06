@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using CapaNegocio;
 
 namespace Telar
 {
@@ -20,6 +21,7 @@ namespace Telar
         private bool Arrastrar = false;        
         private Point formpoint;
         private Point Cursorpoint;
+        private ConexionPython comunicacion;
         public FmTelar()
         {
             InitializeComponent();
@@ -47,6 +49,8 @@ namespace Telar
         }
         private void MatrizTelar()
         {
+            comunicacion = new ConexionPython();
+
             int fila = dgvTelar.Rows.Count, columna = dgvTelar.Columns.Count;
             Color celda = Color.White;
             string[,] matrizTelar = new string[fila,columna];
@@ -57,6 +61,9 @@ namespace Telar
                     ColorTranslator.ToHtml(celda);
                     matrizTelar[j, i] = celda.Name;
                 }
+            
+            string mensaje = comunicacion.RespuestaMatriz(matrizTelar).ToString();
+            MessageBox.Show(mensaje);
         }
         private void FmTelar_Load(object sender, EventArgs e)
         {

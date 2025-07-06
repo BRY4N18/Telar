@@ -1,10 +1,12 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,27 +14,44 @@ namespace CapaNegocio
 {
     public class ConexionPython
     {
-        private readonly HttpClient httpClient = new HttpClient();
-        public async Task<string> PromptAPython(string[,] matriz)
+        static async Task<string> ObtenerRespuestaDeepSeek(string prompt)
         {
-            string prompt = "Tengo un telar representado por una matriz de colores de 5x5, donde cada celda tiene un color. Interprétalo como un patrón andino. Aquí está la matriz:\n" + matriz ;
-            string salida ="";
-            var texto = prompt;
-            var json = JsonConvert.SerializeObject(new { texto = texto });
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var url = "https://openrouter.ai/api/v1/chat/completions";
+            var token = "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";
 
-            try
+            using (var client = new HttpClient())
             {
-                var response = await httpClient.PostAsync("http://localhost:5000/api/ia", content);
-                var responseString = await response.Content.ReadAsStringAsync();
-                var resultado = JsonConvert.DeserializeObject<dynamic>(responseString);
-                salida = resultado.respuesta;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var contenido = new
+                {
+                    model = "deepseek/deepseek-r1:free",
+                    messages = new[]
+                    {
+                    new {
+                        role = "user",
+                        content = prompt + ".Solo dame lo que te pido sin tantas explicaciones, por favor."
+                    }
+                }
+                };
+
+                var json = Newtonsoft.Json.JsonConvert.SerializeObject(contenido);
+                var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var respuesta = await client.PostAsync(url, httpContent);
+                var respuestaContenido = await respuesta.Content.ReadAsStringAsync();
+
+                var jsonRespuesta = JObject.Parse(respuestaContenido);
+                return jsonRespuesta["choices"][0]["message"]["content"]?.ToString();
             }
-            catch (Exception ex)
-            {
-                salida = ex.Message;
-            }
-            return salida;
+        }
+
+        public async Task RespuestaMatriz(string[,] matriz)
+        {
+            string prompt = "\"Tengo un telar representado por una matriz de colores de 5x5, donde cada celda tiene un color. Interprétalo como un patrón andino. Aquí está la matriz: " + matriz;
+            string respuesta = await ObtenerRespuestaDeepSeek(prompt);
+            Console.WriteLine(respuesta);
         }
     }
 }
