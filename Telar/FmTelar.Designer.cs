@@ -76,7 +76,6 @@
             this.dgvTelar.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTelar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvTelar.Location = new System.Drawing.Point(31, 53);
-            this.dgvTelar.MultiSelect = false;
             this.dgvTelar.Name = "dgvTelar";
             this.dgvTelar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvTelar.RowHeadersVisible = false;
