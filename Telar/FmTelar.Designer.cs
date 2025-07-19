@@ -40,6 +40,7 @@
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnInterpretar = new System.Windows.Forms.Button();
+            this.btnBorrador = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelar)).BeginInit();
             this.PanelSuperior.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTelar.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTelar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvTelar.GridColor = System.Drawing.Color.Black;
             this.dgvTelar.Location = new System.Drawing.Point(31, 53);
             this.dgvTelar.Name = "dgvTelar";
             this.dgvTelar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -95,7 +96,7 @@
             // btnColores
             // 
             this.btnColores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnColores.BackColor = System.Drawing.Color.Transparent;
+            this.btnColores.BackColor = System.Drawing.Color.Gainsboro;
             this.btnColores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnColores.BackgroundImage")));
             this.btnColores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnColores.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -191,13 +192,30 @@
             this.btnInterpretar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInterpretar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInterpretar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInterpretar.Location = new System.Drawing.Point(702, 462);
+            this.btnInterpretar.Location = new System.Drawing.Point(702, 518);
             this.btnInterpretar.Name = "btnInterpretar";
             this.btnInterpretar.Size = new System.Drawing.Size(146, 56);
             this.btnInterpretar.TabIndex = 3;
             this.btnInterpretar.Text = "Interpretar";
             this.btnInterpretar.UseVisualStyleBackColor = true;
             this.btnInterpretar.Click += new System.EventHandler(this.btnInterpretar_Click);
+            // 
+            // btnBorrador
+            // 
+            this.btnBorrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrador.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBorrador.BackgroundImage")));
+            this.btnBorrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBorrador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorrador.FlatAppearance.BorderSize = 0;
+            this.btnBorrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrador.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrador.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBorrador.Location = new System.Drawing.Point(732, 284);
+            this.btnBorrador.Name = "btnBorrador";
+            this.btnBorrador.Size = new System.Drawing.Size(81, 83);
+            this.btnBorrador.TabIndex = 4;
+            this.btnBorrador.UseVisualStyleBackColor = true;
+            this.btnBorrador.Click += new System.EventHandler(this.btnBorrador_Click);
             // 
             // FmTelar
             // 
@@ -206,6 +224,7 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(876, 778);
+            this.Controls.Add(this.btnBorrador);
             this.Controls.Add(this.btnInterpretar);
             this.Controls.Add(this.PanelSuperior);
             this.Controls.Add(this.btnColores);
@@ -231,6 +250,7 @@
         private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnInterpretar;
+        private System.Windows.Forms.Button btnBorrador;
     }
 }
 

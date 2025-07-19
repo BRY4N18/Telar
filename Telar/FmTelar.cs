@@ -42,8 +42,6 @@ namespace Telar
 
             for (int i = 0; i < dgvTelar.ColumnCount; i++)
                 dgvTelar.Columns[i].Width = dgvTelar.Width / dgvTelar.ColumnCount;
-
-            dgvTelar.DefaultCellStyle.SelectionBackColor = Color.Transparent;
         }
         private async void MatrizTelar()
         {
@@ -81,6 +79,7 @@ namespace Telar
         {           
             Coldiag.ShowDialog();
             pintura = Coldiag.Color;
+            dgvTelar.Cursor = Cursors.Hand;
         }
         private void PanelSuperior_MouseDown(object sender, MouseEventArgs e)
         {
@@ -127,6 +126,9 @@ namespace Telar
         }
         private void dgvTelar_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (dgvTelar.Cursor != Cursors.Hand)
+                pintura = Color.White;
+
             if (Pulsar) dgvTelar[e.ColumnIndex, e.RowIndex].Style.BackColor = pintura;
         }
         private void dgvTelar_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
@@ -135,6 +137,11 @@ namespace Telar
             {
                 e.Cell.Selected = false;
             }
+        }
+        private void btnBorrador_Click(object sender, EventArgs e)
+        {
+            Cursor raton = new Cursor("BorradorCursor.cur");
+            dgvTelar.Cursor = raton;
         }
     }
 }
