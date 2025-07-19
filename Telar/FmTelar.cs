@@ -16,7 +16,8 @@ namespace Telar
     public partial class FmTelar : Form
     {
         Color pintura = Color.Transparent;
-        private bool Arrastrar = false;        
+        private bool Arrastrar = false;
+        private bool Pulsar = false;
         private Point formpoint;
         private Point Cursorpoint;
         private ConexionPython comunicacion;
@@ -32,22 +33,17 @@ namespace Telar
             dgvTelar.ColumnCount = celdas;
 
             TamanoCeldas();
-
-            dgvTelar.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.Transparent;
-
         }
         private void TamanoCeldas()
         {
-            //Ponerle tamañoa a los cuadros de la matriz
+            //Ponerle tamaño a las celdas de la matriz
             for (int i = 0; i < dgvTelar.RowCount; i++)
                 dgvTelar.Rows[i].Height = dgvTelar.Height / dgvTelar.RowCount;
 
             for (int i = 0; i < dgvTelar.ColumnCount; i++)
                 dgvTelar.Columns[i].Width = dgvTelar.Width / dgvTelar.ColumnCount;
 
-            for (int i = 0; i < dgvTelar.RowCount; i++)
-                for (int j = 0; j < dgvTelar.ColumnCount; j++)
-                    dgvTelar[i, j].Style.BackColor = Color.White;
+            dgvTelar.DefaultCellStyle.SelectionBackColor = Color.Transparent;
         }
         private async void MatrizTelar()
         {
@@ -80,11 +76,7 @@ namespace Telar
         private void FmTelar_Load(object sender, EventArgs e)
         {
             CargarTelar();
-        }        
-        private void dgvTelar_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvTelar[e.ColumnIndex, e.RowIndex].Style.BackColor = pintura;
-        }               
+        }                      
         private void btnColores_Click(object sender, EventArgs e)
         {           
             Coldiag.ShowDialog();
@@ -124,6 +116,25 @@ namespace Telar
         private void btnInterpretar_Click(object sender, EventArgs e)
         {
             MatrizTelar();
+        }
+        private void dgvTelar_MouseUp(object sender, MouseEventArgs e)
+        {
+            Pulsar = false;
+        }
+        private void dgvTelar_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) Pulsar = true;
+        }
+        private void dgvTelar_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (Pulsar) dgvTelar[e.ColumnIndex, e.RowIndex].Style.BackColor = pintura;
+        }
+        private void dgvTelar_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            if (e.StateChanged == DataGridViewElementStates.Selected)
+            {
+                e.Cell.Selected = false;
+            }
         }
     }
 }
