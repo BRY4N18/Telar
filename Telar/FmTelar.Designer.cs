@@ -81,13 +81,16 @@
             this.dgvTelar.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTelar.GridColor = System.Drawing.Color.Black;
             this.dgvTelar.Location = new System.Drawing.Point(31, 53);
+            this.dgvTelar.MultiSelect = false;
             this.dgvTelar.Name = "dgvTelar";
+            this.dgvTelar.ReadOnly = true;
             this.dgvTelar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvTelar.RowHeadersVisible = false;
             this.dgvTelar.RowHeadersWidth = 51;
             this.dgvTelar.RowTemplate.Height = 24;
             this.dgvTelar.Size = new System.Drawing.Size(634, 703);
             this.dgvTelar.TabIndex = 0;
+            this.dgvTelar.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTelar_CellMouseDown);
             this.dgvTelar.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTelar_CellMouseMove);
             this.dgvTelar.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvTelar_CellStateChanged);
             this.dgvTelar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvTelar_MouseDown);

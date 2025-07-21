@@ -143,5 +143,9 @@ namespace Telar
             Cursor raton = new Cursor("BorradorCursor.cur");
             dgvTelar.Cursor = raton;
         }
+        private void dgvTelar_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvTelar[e.ColumnIndex, e.RowIndex].Style.BackColor = pintura;
+        }
     }
 }
