@@ -17,7 +17,7 @@ namespace CapaNegocio
         static async Task<string> ObtenerRespuestaDeepSeek(string prompt)
         {
             string url = "https://openrouter.ai/api/v1/chat/completions";
-            string token = "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";
+            string token = "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";
 
             using (var client = new HttpClient())
             {
