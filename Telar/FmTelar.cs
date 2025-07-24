@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -114,7 +115,11 @@ namespace Telar
         }
         private void btnInterpretar_Click(object sender, EventArgs e)
         {
+            Progreso.Visible = true;
             MatrizTelar();
+            for (int i = 0; i <Progreso.Maximum; i+=2)            
+                Progreso.Increment(2);
+            Progreso.Visible = false;        
         }
         private void dgvTelar_MouseUp(object sender, MouseEventArgs e)
         {
