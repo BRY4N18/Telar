@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmTelar));
             this.dgvTelar = new System.Windows.Forms.DataGridView();
             this.Coldiag = new System.Windows.Forms.ColorDialog();
@@ -41,6 +41,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnInterpretar = new System.Windows.Forms.Button();
             this.btnBorrador = new System.Windows.Forms.Button();
+            this.Progreso = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelar)).BeginInit();
             this.PanelSuperior.SuspendLayout();
             this.SuspendLayout();
@@ -51,34 +52,34 @@
             this.dgvTelar.AllowUserToDeleteRows = false;
             this.dgvTelar.AllowUserToResizeColumns = false;
             this.dgvTelar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue;
-            this.dgvTelar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.Blue;
+            this.dgvTelar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle49;
             this.dgvTelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTelar.BackgroundColor = System.Drawing.Color.White;
             this.dgvTelar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTelar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTelar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTelar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
             this.dgvTelar.ColumnHeadersHeight = 29;
             this.dgvTelar.ColumnHeadersVisible = false;
             this.dgvTelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTelar.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTelar.DefaultCellStyle = dataGridViewCellStyle51;
             this.dgvTelar.GridColor = System.Drawing.Color.Black;
             this.dgvTelar.Location = new System.Drawing.Point(31, 53);
             this.dgvTelar.MultiSelect = false;
@@ -220,6 +221,20 @@
             this.btnBorrador.UseVisualStyleBackColor = true;
             this.btnBorrador.Click += new System.EventHandler(this.btnBorrador_Click);
             // 
+            // Progreso
+            // 
+            this.Progreso.BackColor = System.Drawing.Color.DarkGray;
+            this.Progreso.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Progreso.Location = new System.Drawing.Point(239, 358);
+            this.Progreso.Margin = new System.Windows.Forms.Padding(10);
+            this.Progreso.MarqueeAnimationSpeed = 10000;
+            this.Progreso.Maximum = 100000000;
+            this.Progreso.Name = "Progreso";
+            this.Progreso.Size = new System.Drawing.Size(369, 63);
+            this.Progreso.Step = 1;
+            this.Progreso.TabIndex = 5;
+            this.Progreso.Visible = false;
+            // 
             // FmTelar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,6 +242,7 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(876, 778);
+            this.Controls.Add(this.Progreso);
             this.Controls.Add(this.btnBorrador);
             this.Controls.Add(this.btnInterpretar);
             this.Controls.Add(this.PanelSuperior);
@@ -254,6 +270,7 @@
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnInterpretar;
         private System.Windows.Forms.Button btnBorrador;
+        private System.Windows.Forms.ProgressBar Progreso;
     }
 }
 

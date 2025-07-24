@@ -17,7 +17,7 @@ namespace CapaNegocio
         static async Task<string> ObtenerRespuestaDeepSeek(string prompt)
         {
             string url = "https://openrouter.ai/api/v1/chat/completions";
-            string token = "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";
+            string token = "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";
 
             using (var client = new HttpClient())
             {
@@ -46,7 +46,6 @@ namespace CapaNegocio
                 return jsonRespuesta["choices"][0]["message"]["content"].ToString();
             }
         }
-
         public async Task<string> RespuestaMatriz(string matriz)
         {
             string prompt = "Tengo un telar representado por una matriz de colores de 13x13, donde cada celda tiene un color. Interprétalo como un patrón andino. Aquí está la matriz: " + matriz + ".\nListo dime ahora el significado del telar que tiene ese patron de colores.";
