@@ -28,7 +28,7 @@ namespace Telar
         private void CargarTelar()
         {
             //Ubicar la cantidad de filas y columnas que deseo
-            const int celdas = 13;
+            const int celdas = 11;
             dgvTelar.RowCount = celdas;
             dgvTelar.ColumnCount = celdas;
 
