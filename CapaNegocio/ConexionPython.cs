@@ -17,6 +17,7 @@ namespace CapaNegocio
         static async Task<string> ObtenerRespuestaDeepSeek(string prompt)
         {
             string url = "https://openrouter.ai/api/v1/chat/completions";
+            //string token = "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";
             string token = "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";
 
             using (var client = new HttpClient())
@@ -27,6 +28,7 @@ namespace CapaNegocio
                 var contenido = new
                 {
                     model = "deepseek/deepseek-r1:free",
+                    //model = "deepseek/deepseek-chat-v3-0324:free",
                     messages = new[]
                     {
                     new {
