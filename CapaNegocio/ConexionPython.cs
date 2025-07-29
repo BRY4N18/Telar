@@ -17,35 +17,50 @@ namespace CapaNegocio
         static async Task<string> ObtenerRespuestaDeepSeek(string prompt)
         {
             string url = "https://openrouter.ai/api/v1/chat/completions";
-            //string token = "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";
             string token = "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";
+            string token = "a";
 
             using (var client = new HttpClient())
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                var contenido = new
+                try
                 {
-                    model = "deepseek/deepseek-r1:free",
-                    //model = "deepseek/deepseek-chat-v3-0324:free",
-                    messages = new[]
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var contenido = new
                     {
-                    new {
-                        role = "user",
-                        content = prompt + ".Solo dame lo que te pido sin tantas explicaciones, por favor."
+                        model = "deepseek/deepseek-r1:free",
+                        messages = new[]
+                        {
+                        new {
+                            role = "user",
+                            content = prompt + ".Solo dame lo que te pido sin tantas explicaciones, por favor."
+                        }
+                    }
+                    };
+                
+                    var json = Newtonsoft.Json.JsonConvert.SerializeObject(contenido);
+                    var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    var respuesta = await client.PostAsync(url, httpContent);
+                    var respuestaContenido = await respuesta.Content.ReadAsStringAsync();
+
+                    var jsonRespuesta = JObject.Parse(respuestaContenido);
+                    //return jsonRespuesta["choices"][0]["message"]["content"].ToString();
+                    if (jsonRespuesta["choices"] != null && jsonRespuesta["choices"][0] != null 
+                        && jsonRespuesta["choices"][0]["message"] != null && jsonRespuesta["choices"][0]["message"]["content"] != null)
+                    {
+                        return jsonRespuesta["choices"][0]["message"]["content"].ToString();
+                    }
+                    else
+                    {
+                        return "La respuesta del servidor no contiene información válida. Por favor, intenta nuevamente más tarde.";
                     }
                 }
-                };
-
-                var json = Newtonsoft.Json.JsonConvert.SerializeObject(contenido);
-                var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-
-                var respuesta = await client.PostAsync(url, httpContent);
-                var respuestaContenido = await respuesta.Content.ReadAsStringAsync();
-
-                var jsonRespuesta = JObject.Parse(respuestaContenido);
-                return jsonRespuesta["choices"][0]["message"]["content"].ToString();
+                catch (Exception ex)
+                {
+                    return ex.Message.ToString();
+                }
             }
         }
         public async Task<string> RespuestaMatriz(string matriz)
