@@ -41,7 +41,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnInterpretar = new System.Windows.Forms.Button();
             this.btnBorrador = new System.Windows.Forms.Button();
-            this.Progreso = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelar)).BeginInit();
             this.PanelSuperior.SuspendLayout();
             this.SuspendLayout();
@@ -81,8 +80,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTelar.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTelar.GridColor = System.Drawing.Color.Black;
-            this.dgvTelar.Location = new System.Drawing.Point(154, 78);
-            this.dgvTelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTelar.Location = new System.Drawing.Point(205, 96);
+            this.dgvTelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTelar.MultiSelect = false;
             this.dgvTelar.Name = "dgvTelar";
             this.dgvTelar.ReadOnly = true;
@@ -90,7 +89,7 @@
             this.dgvTelar.RowHeadersVisible = false;
             this.dgvTelar.RowHeadersWidth = 51;
             this.dgvTelar.RowTemplate.Height = 24;
-            this.dgvTelar.Size = new System.Drawing.Size(327, 344);
+            this.dgvTelar.Size = new System.Drawing.Size(436, 423);
             this.dgvTelar.TabIndex = 0;
             this.dgvTelar.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTelar_CellMouseDown);
             this.dgvTelar.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTelar_CellMouseMove);
@@ -111,10 +110,10 @@
             this.btnColores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnColores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnColores.ForeColor = System.Drawing.Color.Transparent;
-            this.btnColores.Location = new System.Drawing.Point(81, 512);
-            this.btnColores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnColores.Location = new System.Drawing.Point(108, 630);
+            this.btnColores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnColores.Name = "btnColores";
-            this.btnColores.Size = new System.Drawing.Size(158, 71);
+            this.btnColores.Size = new System.Drawing.Size(211, 87);
             this.btnColores.TabIndex = 1;
             this.btnColores.UseVisualStyleBackColor = false;
             this.btnColores.Click += new System.EventHandler(this.btnColores_Click);
@@ -127,9 +126,9 @@
             this.PanelSuperior.Controls.Add(this.btnSalir);
             this.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSuperior.Location = new System.Drawing.Point(0, 0);
-            this.PanelSuperior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelSuperior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelSuperior.Name = "PanelSuperior";
-            this.PanelSuperior.Size = new System.Drawing.Size(630, 24);
+            this.PanelSuperior.Size = new System.Drawing.Size(840, 30);
             this.PanelSuperior.TabIndex = 2;
             this.PanelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelSuperior_MouseDown);
             this.PanelSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelSuperior_MouseMove);
@@ -146,10 +145,10 @@
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Location = new System.Drawing.Point(548, 2);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(731, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(23, 20);
+            this.btnMinimizar.Size = new System.Drawing.Size(31, 25);
             this.btnMinimizar.TabIndex = 5;
             this.btnMinimizar.UseVisualStyleBackColor = true;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
@@ -165,10 +164,10 @@
             this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Location = new System.Drawing.Point(576, 2);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMaximizar.Location = new System.Drawing.Point(768, 2);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(23, 20);
+            this.btnMaximizar.Size = new System.Drawing.Size(31, 25);
             this.btnMaximizar.TabIndex = 4;
             this.btnMaximizar.UseVisualStyleBackColor = true;
             this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
@@ -184,10 +183,10 @@
             this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(608, 2);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Location = new System.Drawing.Point(811, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(20, 20);
+            this.btnSalir.Size = new System.Drawing.Size(27, 25);
             this.btnSalir.TabIndex = 3;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -203,10 +202,10 @@
             this.btnInterpretar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInterpretar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInterpretar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInterpretar.Location = new System.Drawing.Point(392, 512);
-            this.btnInterpretar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInterpretar.Location = new System.Drawing.Point(523, 630);
+            this.btnInterpretar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInterpretar.Name = "btnInterpretar";
-            this.btnInterpretar.Size = new System.Drawing.Size(157, 72);
+            this.btnInterpretar.Size = new System.Drawing.Size(209, 89);
             this.btnInterpretar.TabIndex = 3;
             this.btnInterpretar.UseVisualStyleBackColor = false;
             this.btnInterpretar.Click += new System.EventHandler(this.btnInterpretar_Click);
@@ -222,37 +221,22 @@
             this.btnBorrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrador.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrador.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBorrador.Location = new System.Drawing.Point(236, 512);
-            this.btnBorrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrador.Location = new System.Drawing.Point(315, 630);
+            this.btnBorrador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBorrador.Name = "btnBorrador";
-            this.btnBorrador.Size = new System.Drawing.Size(155, 72);
+            this.btnBorrador.Size = new System.Drawing.Size(207, 89);
             this.btnBorrador.TabIndex = 4;
             this.btnBorrador.UseVisualStyleBackColor = false;
             this.btnBorrador.Click += new System.EventHandler(this.btnBorrador_Click);
             // 
-            // Progreso
-            // 
-            this.Progreso.BackColor = System.Drawing.Color.Bisque;
-            this.Progreso.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Progreso.Location = new System.Drawing.Point(182, 213);
-            this.Progreso.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.Progreso.MarqueeAnimationSpeed = 10000;
-            this.Progreso.Maximum = 100000000;
-            this.Progreso.Name = "Progreso";
-            this.Progreso.Size = new System.Drawing.Size(277, 51);
-            this.Progreso.Step = 1;
-            this.Progreso.TabIndex = 5;
-            this.Progreso.Visible = false;
-            // 
             // FmTelar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(630, 601);
-            this.Controls.Add(this.Progreso);
+            this.ClientSize = new System.Drawing.Size(840, 740);
             this.Controls.Add(this.btnBorrador);
             this.Controls.Add(this.btnInterpretar);
             this.Controls.Add(this.PanelSuperior);
@@ -260,7 +244,7 @@
             this.Controls.Add(this.dgvTelar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FmTelar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FmTelar_Load);
@@ -281,7 +265,6 @@
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnInterpretar;
         private System.Windows.Forms.Button btnBorrador;
-        private System.Windows.Forms.ProgressBar Progreso;
     }
 }
 
