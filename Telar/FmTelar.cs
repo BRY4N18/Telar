@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -145,6 +146,9 @@ namespace Telar
         }
         private void btnBorrador_Click(object sender, EventArgs e)
         {
+            //Por si se elimina el cursor
+            //FileStream file = new FileStream("BorradorCursor.cur", FileMode.OpenOrCreate, FileAccess.Write);
+            //file.Close();
             Cursor raton = new Cursor("BorradorCursor.cur");
             dgvTelar.Cursor = raton;
         }
