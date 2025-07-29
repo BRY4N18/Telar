@@ -69,7 +69,11 @@ namespace Telar
                 matri += (i != columna - 1) ? "]" : "]]";
             }
 
+            FmCargando carga = new FmCargando();
+            carga.Show();
+
             string mensaje = await comunicacion.RespuestaMatriz(matri);
+            carga.Hide();
             MessageBox.Show(mensaje.ToString());
         }
         private void FmTelar_Load(object sender, EventArgs e)
@@ -115,11 +119,7 @@ namespace Telar
         }
         private void btnInterpretar_Click(object sender, EventArgs e)
         {
-            //Progreso.Visible = true;
-            MatrizTelar();
-            //for (int i = 0; i <Progreso.Maximum; i+=2)            
-            //    Progreso.Increment(2);
-            //Progreso.Visible = false;        
+            MatrizTelar();       
         }
         private void dgvTelar_MouseUp(object sender, MouseEventArgs e)
         {
